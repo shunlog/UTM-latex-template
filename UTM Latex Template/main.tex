@@ -1,0 +1,50 @@
+\documentclass{utm_report}
+
+\addbibresource{references.bib}
+
+% \usepackage{showframe}    % DEBUG: Show margins & frames
+
+
+\begin{document}
+
+
+\include{chapters/1_abstract}
+
+\tableofcontents
+
+\clearpage
+
+% List of figures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures 
+
+% You can decide whether to put the LOF and LOT 
+% on the same page or on different pages.
+% If on the same page, use some spacing:
+\vspace{1\baselineskip}
+
+% List of tables
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables 
+
+\include{chapters/ch0_introduction}
+\include{chapters/ch1_domain_analysis}
+\include{chapters/ch2_requirements}
+\include{chapters/ch3_system_design}
+\include{chapters/ch4_implementation}
+\include{chapters/ch5_conclusion}
+
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\printbibliography[title=BIBLIOGRAPHY]
+
+\appendix
+
+\appendixchapter{Some code}
+\label{appendix:bucket_call}
+
+\begin{listing}[ht]
+\inputminted{js}{src/code.js}
+\end{listing}
+
+
+\end{document}
